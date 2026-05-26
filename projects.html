@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/mslogo.png" type="image/x-icon" />
+    <title>Projects</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/msmallari.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div id="nav"></div>
+
+    <!-- TITLE -->
+    <div class="container mb-5">
+      <div class="text-center row justify-content-center">
+        <h1 class="title">List of Completed Projects</h1>
+        <p class="text w-75">
+          A showcase of our finished works that reflect our commitment to
+          quality, precision, and on-time delivery. Each project is completed
+          according to contract standards and tailored to meet our clients’
+          exact requirements.
+        </p>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-3">
+      <button
+        onclick="setProjectType('All', this)"
+        class="btn btn-outline-dark btn-sm project-filter-btn active-filter"
+      >
+        All
+      </button>
+
+      <button
+        onclick="setProjectType('Residential Construction', this)"
+        class="btn btn-outline-dark btn-sm project-filter-btn"
+      >
+        Residential Construction
+      </button>
+
+      <button
+        onclick="setProjectType('Commercial Construction', this)"
+        class="btn btn-outline-dark btn-sm project-filter-btn"
+      >
+        Commercial Construction
+      </button>
+
+      <button
+        onclick="setProjectType('Civil & Infrastructure Works', this)"
+        class="btn btn-outline-dark btn-sm project-filter-btn"
+      >
+        Civil & Infrastructure Works
+      </button>
+
+      <button
+        onclick="setProjectType('Sanitary & Plumbing Works', this)"
+        class="btn btn-outline-dark btn-sm project-filter-btn"
+      >
+        Sanitary & Plumbing Works
+      </button>
+
+      <button
+        onclick="setProjectType('Fire Protection Systems', this)"
+        class="btn btn-outline-dark btn-sm project-filter-btn"
+      >
+        Fire Protection Systems
+      </button>
+
+      <button
+        onclick="setProjectType('Renovation & Maintenance', this)"
+        class="btn btn-outline-dark btn-sm project-filter-btn"
+      >
+        Renovation & Maintenance
+      </button>
+    </div>
+    <div class="mb-3 text-center">
+      <select
+        id="statusFilter"
+        class="form-select w-25 mx-auto"
+        onchange="filterProjects()"
+      >
+        <option value="All">All</option>
+        <option value="Completed">Completed</option>
+        <option value="Ongoing">Ongoing</option>
+      </select>
+    </div>
+    <!-- PROJECT TABLE -->
+    <section>
+      <div class="container">
+        <div class="table-wrapper" style="overflow-x: auto">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Project Name</th>
+                <th>Location</th>
+                <th>Scope of Work</th>
+                <th>Type of Project</th>
+              </tr>
+            </thead>
+
+            <!-- 🔥 IMPORTANT ID -->
+            <tbody id="projectsTable"></tbody>
+          </table>
+        </div>
+
+        <!-- 🔥 PAGINATION -->
+        <div id="pagination" class="text-center mt-3 mb-5"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/java.js"></script>
+
+    <!-- Firebase (module) -->
+    <script type="module" src="assets/js/firebase.js"></script>
+
+    <!-- Projects logic -->
+    <script type="module" src="assets/js/project.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        once: true,
+        duration: 800,
+      });
+    </script>
+  </body>
+</html>
